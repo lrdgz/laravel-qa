@@ -20,7 +20,6 @@
                                 ><i class="fas fa-check fa-2x"></i></a>
                                 <form action="{{ route('answers.accept', $answer->id) }}" id="accept-answer-{{ $answer->id }}" method="POST" style="display: none;">
                                     @csrf
-
                                 </form>
                             @else
                                 @if($answer->is_best)
