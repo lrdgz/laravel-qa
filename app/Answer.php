@@ -15,6 +15,10 @@ class Answer extends Model
         static::created( static function ($answer) {
             $answer->question->increment('answers_count');
         });
+
+        static::deleted( static function ($answer) {
+            $answer->question->decrement('answers_count');
+        });
     }
 
     public function question(){
